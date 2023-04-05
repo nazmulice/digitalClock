@@ -6,12 +6,10 @@ function showTime() {
   var session = "AM";
 
   if (h == 0) {
-    h = 11;
+    h = 12;
   }
-  else if (h == 12) {
-     session = "PM";
-  }
-  else if (h > 12) {
+
+  if (h > 12) {
     h = h - 12;
     session = "PM";
   }
@@ -22,7 +20,7 @@ function showTime() {
 
   var time = h + ":" + m + ":" + s + " " + session;
   document.getElementById("MyClockDisplay").innerText = time;
-  document.getElementById("MyClockDisplay").textContent = time;
+  //document.getElementById("MyClockDisplay").textContent = time;
 
   setTimeout(showTime, 1000);
 }
